@@ -1,26 +1,222 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0a0a0a;
+  --background: #ededed;
+  --accent: #f4c61e;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
+html,
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), sans-serif;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+p {
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+h1 {
+  text-transform: uppercase;
+  font-size: 6rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.preloader,
+.split-overlay,
+.tags-overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100svh;
+}
+
+.preloader,
+.split-overlay {
+  background-color: var(--accent);
+  color: var(--background);
+}
+
+.preloader,
+.tags-overlay {
+  z-index: 2;
+}
+
+.split-overlay {
+  z-index: 1;
+}
+
+.intro-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+.outro-title {
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 15rem);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+.tag {
+  position: absolute;
+  width: max-content;
+  color: var(--background);
+  overflow: hidden;
+}
+
+.tag-1 {
+  top: 85%;
+  left: 45%;
+}
+
+.tag-2 {
+  top: 15%;
+  left: 25%;
+}
+
+.tag-2 {
+  top: 30%;
+  left: 15%;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  clip-path: polygon(0 48%, 0 48%, 0 52%, 0 52%);
+  z-index: 2;
+}
+
+
+.wrapper .hero-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+nav,
+footer {
+  position: relative;
+  width: 100%;
+  padding: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--background);
+  z-index: 2;
+}
+
+nav p#logo {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background);
+  clip-path: polygon(0 50%, 0 50%, 0 50%, 0 50%);
+}
+
+.card h1 {
+  text-align: center;
+  width: 100%;
+  font-size: 3rem;
+}
+
+.card .char span {
+  position: relative;
+  display: inline-block;
+  transform: translateY(100%);
+  will-change: transform;
+}
+
+.intro-title .char,
+.outro-title .char,
+.card .char {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.intro-title .char,
+.outro-title .char {
+  margin-top: 0.75rem;
+}
+
+.intro-title .char span,
+.outro-title .char span,
+.tag .word {
+  position: relative;
+  display: inline-block;
+  transform: translateY(-100%);
+  will-change: transform;
+}
+
+.intro-title .first-char {
+  transform-origin: top;
+}
+
+.tags-overlay,
+.intro-title,
+.outro-title {
+  opacity: 0;
+}
+
+@media (max-width: 1000px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .outro-title {
+    left: calc(50% + 6.1rem);
+  }
+
+  .card {
+    width: 75%;
+  }
+
+  .card h1 {
+    font-size: 2.5rem;
+  }
+
+  .intro-title .char,
+  .outro-title .char {
+    margin-top: .5rem;
+  }
 }

@@ -1,10 +1,10 @@
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { CustomEase } from "gsap/CustomEase";
-import { SplitText } from "gsap/SplitText";
+import { splitTextElements } from '@/animations/splitText'
 
 
-gsap.registerPlugin(useGSAP, SplitText, CustomEase);
+gsap.registerPlugin(useGSAP, CustomEase);
 CustomEase.create('hop', '.8, 0, .3, 1');
 
 
@@ -23,43 +23,9 @@ export default function useIntro(mainRef) {
 
                 const { isMobile } = ctx.conditions;
 
-                const splitTextElements = (
-                    selector,
-                    type = "words, chars",
-                    addFirstChar = false
-                ) => {
-
-                    // const element = elRef(selector);
-                    const element = gsap.utils.toArray(selector)
-
-                    element.forEach((el) => {
-                        const splitText = new SplitText(el, {
-                            type,
-                            wordsClass: 'word',
-                            charsClass: 'char'
-                        })
-
-                        if (type.includes('chars')) {
-                            splitText.chars.forEach((char, idx) => {
-                                const originalText = char.textContent;
-
-                                char.innerHTML = `<span>${originalText}</span>`;
-
-                                if (addFirstChar && idx === 0) {
-                                    char.classList.add('first-char')
-                                }
-                            })
-                        }
-                    })
-                }
-
-
                 splitTextElements('.intro-title h1', 'words, chars', true);
                 splitTextElements('.outro-title h1');
                 splitTextElements('.tag p', 'words');
-                splitTextElements('.card h1', 'words, chars', true);
-
-
 
                 gsap.set(
                     [
@@ -146,7 +112,6 @@ export default function useIntro(mainRef) {
                                 clipPath: 'polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%)',
                             });
 
-
                         }
                     },
                         3.5
@@ -177,14 +142,7 @@ export default function useIntro(mainRef) {
                     clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
                     duration: .5
                 }, 5
-                ).to('.wrapper .card', {
-                    clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)'
-                }, 5.25
-                ).to('.wrapper .card h1 .char span', {
-                    y: '0%',
-                    duration: .75,
-                    stagger: 0.05
-                }, 5.5)
+                )
             }
         )
 

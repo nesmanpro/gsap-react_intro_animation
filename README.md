@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# GSAP + React Intro/Outro Animation 🚀
 
-## Getting Started
+_(Recomiendo agregar un GIF/video demo aquí)_
 
-First, run the development server:
+Una animación fluida de entrada y salida (intro/outro) creada con **GSAP** y **React**, perfecta para páginas de inicio, portfolios, transiciones entre rutas o pagina de loading mientras carga la página.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![Gsap desktop](./public/desktop.webp)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Características
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Animación en 3 etapas**:
+  1. Pantalla inicial de carga con logo
+  2. Transición con efecto "reveal"
+  3. Contenido principal con animación escalonada
+- **Uso avanzado de GSAP**:
+  - Timelines para secuencias complejas
+  - Easing personalizado (`expo.inOut`)
+  - Stagger effects para elementos listados
+- **Responsive**: Diseño que se adapta a diferentes tamaños de pantalla
+- **Fácil integración**: Componente React listo para implementar
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+![Gsap mobile](./public/mobile.webp)
 
-## Learn More
+## 🔧 Personalización
 
-To learn more about Next.js, take a look at the following resources:
+Ajusta en `IntroAnimation.js`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Duración**: Modifica los valores en los métodos `tl.to()` y `tl.fromTo()`
+- **Efectos**:
+  - Cambia los tweens de GSAP (`y`, `opacity`, `scale`, etc.)
+- **Timing**: Controla los delays entre animaciones con `stagger` y posiciones absolutas en la timeline
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🧠 Tecnologías
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [GSAP](https://greensock.com/gsap/) - Motor profesional de animaciones
+- [React](https://reactjs.org/) - Biblioteca frontend
+- [Next.js](https://nextjs.org/) - Framework de React para produccióncomplementarias

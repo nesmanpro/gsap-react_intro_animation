@@ -1,5 +1,8 @@
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/sections/Header";
+import { Footer } from "@/sections/Footer";
+import { Preloader } from "@/hooks/Preloader";
 
 const DMSans = DM_Sans({
   variable: "--font-sans",
@@ -16,9 +19,15 @@ export default function RootLayout({ children }) {
   return (
     <html className="" lang="en">
       <body
-        className={`${DMSans.variable}  antialiased `}
+        className={`${DMSans.variable} antialiased bg-sky-700`}
       >
-        {children}
+        <Preloader>
+          <Header />
+          <div>
+            {children}
+          </div>
+          <Footer />
+        </Preloader>
       </body>
     </html>
   );

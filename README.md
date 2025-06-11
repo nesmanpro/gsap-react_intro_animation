@@ -32,8 +32,7 @@ Una animación fluida de entrada y salida (intro/outro) creada con **GSAP** y **
 Ajusta en `IntroAnimation.js`:
 
 - **Duración**: Modifica los valores en los métodos `tl.to()` y `tl.fromTo()`
-- **Efectos**:
-  - Cambia los tweens de GSAP (`y`, `opacity`, `scale`, etc.)
+- **Efectos**: Cambia los tweens de GSAP (`y`, `opacity`, `scale`, etc.)
 - **Timing**: Controla los delays entre animaciones con `stagger` y posiciones absolutas en la timeline
 
 ## 🧠 Tecnologías

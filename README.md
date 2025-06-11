@@ -1,6 +1,12 @@
 # GSAP + React Intro/Outro Animation 🚀
 
-_(Recomiendo agregar un GIF/video demo aquí)_
+## 🚀 Using :
+
+[![React JS](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)]()
+[![JavaScript](https://img.shields.io/badge/JS-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)]()
+[![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)]()
+[![NextJS](https://img.shields.io/badge/next%20js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)]()
+[![GSAP](https://img.shields.io/badge/GSAP-orange?style=for-the-badge)]()
 
 Una animación fluida de entrada y salida (intro/outro) creada con **GSAP** y **React**, perfecta para páginas de inicio, portfolios, transiciones entre rutas o pagina de loading mientras carga la página.
 
